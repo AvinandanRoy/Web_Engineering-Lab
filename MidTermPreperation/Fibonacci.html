@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci - Avinandan Roy</title>
+</head>
+<body>
+    <input type="number" id="number" placeholder="Enter The range of fibonacci?"> <br>
+    <button onClick="checkFibonacci()">Click for getting Fibonacci Series</button>
+    <div class="result"></div>
+
+    <script>
+        function fibonacci(n){
+            let fib = [0,1];
+            for(let i =2 ; i < n ; i++){
+                fib[i] = fib[i-1] + fib[i-2];
+            }
+
+            return fib ;
+        }
+        function checkFibonacci(){
+            const input = document.getElementById("number").value ;
+            let result = document.querySelector(".result");
+
+            if(!input){
+                result.textContent = "Enter The Range";
+            }else{
+                const fiboSeries = fibonacci(input);
+                for(let j = 0 ; j < fiboSeries.length ; j++){
+                    const p = document.createElement("p");
+                    p.textContent = fiboSeries[j] ;
+                    result.appendChild(p);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator – Avinandan Roy</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 40px;
+        width: 700px;
+        border: 1px solid black;
+        border-radius: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        padding: 50px 0;
+      }
+
+      h1 {
+        text-align: center;
+        border: 1px solid black;
+        width: 300px;
+      }
+      .main {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: left;
+      }
+      .btn-grp {
+        margin: 0 auto;
+      }
+      input {
+        padding: 8px;
+      }
+      button {
+        padding: 10px;
+        font-size: 18px;
+        font-weight: 700;
+        margin-right: 10px;
+      }
+
+      .result-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .result {
+        border: 1px solid black;
+        padding: 8px 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Basic Calculator</h1>
+
+    <div class="main">
+      <h4>First Number: <input type="number" id="num1" /></h4>
+      <h4>Second Number: <input type="number" id="num2" /></h4>
+
+      <div class="btn-grp">
+        <button onClick="add()">+</button>
+        <button onClick="substraction()">-</button>
+        <button onClick="multiplication()">*</button>
+        <button onClick="division()">/</button>
+        <button onClick="remainder()">%</button>
+      </div>
+      <div class="result-section">
+        <h3>Result:</h3>
+        <h3 class="result"></h3>
+      </div>
+    </div>
+
+    <script>
+      function add() {
+        let num1 = Number(document.getElementById("num1").value) ;
+        let num2 = Number(document.getElementById("num2").value)
+        let result = document.querySelector(".result");
+        result.textContent = num1 + num2;
+      }
+
+      function substraction(){
+        let num1 = Number(document.getElementById("num1").value) ;
+        let num2 = Number(document.getElementById("num2").value)
+        let result = document.querySelector(".result");
+        result.textContent = num1 - num2;
+      }
+
+      function multiplication(){
+        let num1 = Number(document.getElementById("num1").value) ;
+        let num2 = Number(document.getElementById("num2").value)
+        let result = document.querySelector(".result");
+        result.textContent = num1 * num2;
+      }
+
+      function division(){
+        let num1 = Number(document.getElementById("num1").value) ;
+        let num2 = Number(document.getElementById("num2").value)
+        let result = document.querySelector(".result");
+        result.textContent = num1 / num2;
+      }
+
+      function remainder(){
+        let num1 = Number(document.getElementById("num1").value) ;
+        let num2 = Number(document.getElementById("num2").value)
+        let result = document.querySelector(".result");
+        result.textContent = num1 % num2;
+      }
+
+    </script>
+  </body>
+</html>
